@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "visionx"
+version = "0.1.0"
+description = "Computer-vision CLI toolkit powered by YOLO: detection, tracking, counting, motion analysis, annotated video export."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+dependencies = ["numpy>=1.23", "opencv-python-headless>=4.8"]
+keywords = ["yolo", "opencv", "object-detection", "tracking", "people-counting", "motion-detection", "computer-vision", "cli"]
+
+[project.optional-dependencies]
+ort = ["onnxruntime>=1.16"]
+
+[project.urls]
+Homepage = "https://github.com/SomSokHeng/VSO-Z-VisionX"
+Issues = "https://github.com/SomSokHeng/VSO-Z-VisionX/issues"
+
+[project.scripts]
+visionx = "visionx.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
